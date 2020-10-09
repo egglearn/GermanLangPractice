@@ -1985,15 +1985,15 @@ btn.addEventListener("click", function x() {
 
   //so this checks the word displayed against the regular expression. match returns an array and if it doesnt find a match the first element of the arraz will be "" so thats why it test that the first element is not ""
   if (answer[0].match(regexDer)[0] != "" > 1) {
-    hint.innerText = `most words ending with "${
+    hint.innerText = `⚠️most words ending with "${
       answer[0].match(regexDer)[0]
     }" are masculine`;
   } else if (answer[0].match(regexDie)[0] != "" > 1) {
-    hint.innerText = `many words ending with "${
+    hint.innerText = `⚠️ many words ending with "${
       answer[0].match(regexDie)[0]
     }" are feminine`;
   } else if (answer[0].match(regexDas)[0] != "" > 1) {
-    hint.innerText = `many words ending with "${
+    hint.innerText = `⚠️many words ending with "${
       answer[0].match(regexDas)[0]
     }" are neutral`;
   }
