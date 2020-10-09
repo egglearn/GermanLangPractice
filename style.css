@@ -1,0 +1,79 @@
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.main {
+  display: flex;
+}
+
+#text {
+  margin-bottom: 50px;
+  padding: 50px;
+  background: lightblue;
+  font-size: 35px;
+  min-height: 86px;
+  min-width: 50%;
+}
+
+#hint {
+  margin-bottom: 50px;
+  margin-left: 20px;
+  padding: 50px;
+  background: lightsalmon;
+  font-size: 25px;
+  min-height: 86px;
+  min-width: 30%;
+}
+
+#der {
+  background: blue;
+  padding: 20px;
+  height: 15px;
+  width: 50px;
+  font-size: 30px;
+  color: white;
+}
+
+#die {
+  background: red;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+  margin: 0px 10px;
+}
+
+#das {
+  background: green;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+#button {
+  margin-left: 10px;
+  padding: 30px;
+  background: grey;
+  width: 50px;
+}
+
+@media (max-width: 450px) {
+  #text {
+    margin-bottom: 50px;
+    padding: 50px;
+    background: lightblue;
+    font-size: 35px;
+    min-height: 55px;
+    max-width: 200px;
+  }
+
+  #hint {
+    margin-bottom: 50px;
+    margin-left: 20px;
+    padding: 50px;
+    background: lightsalmon;
+    font-size: 20px;
+    min-height: 55px;
+    min-width: 25%;
+  }
+}
