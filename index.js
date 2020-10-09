@@ -1972,6 +1972,7 @@ const regexDer = /(ismus|ent|er|ig|or|ich|ist|ling|)$/;
 const regexDie = /(heit|ie|ik|keit|schaft|tät|ung|ette|ine|ion|ur|e)$/;
 const regexDas = /(chen|lein|ge|nis|ing|ment|um|tum|o|ma)$/;
 btn.addEventListener("click", function x() {
+  btn.innerText = "Next Word";
   answer = data[Math.floor(Math.random() * 2267)];
   word.innerText = answer[0];
   hint.innerText = "";

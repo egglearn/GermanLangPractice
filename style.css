@@ -50,30 +50,41 @@
   color: white;
 }
 
+
+.articlebuttons:hover{
+display:focus;
+}
+
 #button {
   margin-left: 10px;
   padding: 30px;
-  background: grey;
+  font-size: 20px;
+  background:grey;
   width: 50px;
+  color:white;
+  text-decoration:none;
 }
 
-@media (max-width: 450px) {
-  #text {
-    margin-bottom: 50px;
-    padding: 50px;
-    background: lightblue;
-    font-size: 35px;
-    min-height: 55px;
-    max-width: 200px;
+#button:hover{
+  display:focus;
+}
+
+@media (max-width: 410px) {
+  .main{
+    flex-direction:column;
   }
 
-  #hint {
-    margin-bottom: 50px;
-    margin-left: 20px;
-    padding: 50px;
-    background: lightsalmon;
-    font-size: 20px;
-    min-height: 55px;
-    min-width: 25%;
+  #hint, #text{
+    margin-left:0;
+    max-width: 100%;
+    max-height:50px;
   }
+
+  #articles{
+    max-width: 400px;
+  }
+}
+
+
+
 }
