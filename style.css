@@ -69,7 +69,7 @@ display:focus;
   display:focus;
 }
 
-@media (max-width: 410px) {
+@media (max-width: 430px) {
   .main{
     flex-direction:column;
   }
@@ -82,6 +82,10 @@ display:focus;
 
   #articles{
     max-width: 400px;
+  }
+
+  p{
+    font-size: 15px;
   }
 }
 
