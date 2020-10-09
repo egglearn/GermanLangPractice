@@ -77725,6 +77725,7 @@ let data = [
   ["Zytozym", "n"],
 ];
 
+let dog = "food";
 let word = document.getElementById("text");
 let btn = document.getElementById("button");
 let der = document.getElementById("der");
