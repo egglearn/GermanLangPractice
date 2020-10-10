@@ -29,6 +29,7 @@
   height: 15px;
   font-size: 30px;
   color: white;
+  text-decoration: none;
 }
 
 #die {
@@ -37,6 +38,7 @@
   font-size: 30px;
   color: white;
   margin: 0px 10px;
+  text-decoration: none;
 }
 
 .articles{
@@ -49,11 +51,13 @@
   padding: 12px;
   font-size: 30px;
   color: white;
+  text-decoration: none;
 }
 
 
 .articlebuttons:hover{
 display:focus;
+border: 3px black solid;
 }
 
 #button {
@@ -61,13 +65,19 @@ display:focus;
   background: grey;
   padding: 12px;
   font-size: 30px;
-  color: white;
-  margin-left: 2px;
-
+  color: black;
+  margin-left: 5px;
+  text-decoration: none;
 }
 
 #button:hover{
   display:focus;
+  border: solid 3px black;
+}
+
+
+#count{
+  margin-top: 40px;
 }
 
 /* @media (max-width: 430px) {
