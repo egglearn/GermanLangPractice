@@ -1972,7 +1972,8 @@ let correctAnswers = document.getElementById("countdisplay");
 let count = 0;
 const regexDer = /(ismus|ent|er|ig|or|ich|ist|ling|)$/;
 const regexDie = /(heit|ie|ik|keit|schaft|tät|ung|ette|ine|ion|ur|e)$/;
-const regexDas = /(chen|lein|ge|nis|ing|ment|um|tum|o|ma)$/;
+const regexDas = /(chen|lein|nis|ing|ment|um|tum|o|ma)$/;
+const regexDasBegin = /^(ge)/;
 
 btn.addEventListener("click", function x() {
   let clicked = false;
@@ -1993,7 +1994,7 @@ btn.addEventListener("click", function x() {
 
   //so this checks the word displayed against the regular expression. match returns an array and if it doesnt find a match the first element of the arraz will be "" so thats why it test that the first element is not ""
   if (answer[0].match(regexDer)[0] != "") {
-    hint.innerText = `⚠️most words ending with "${
+    hint.innerText = `⚠️many words ending with "${
       answer[0].match(regexDer)[0]
     }" are masculine`;
   }
@@ -2005,6 +2006,10 @@ btn.addEventListener("click", function x() {
   } else if (answer[0].match(regexDas) != null) {
     hint.innerText = `⚠️many words ending with "${
       answer[0].match(regexDas)[0]
+    }" are neutral`;
+  } else if (answer[0].match(regexDasBegin) != null) {
+    hint.innerText = `⚠️many words starting with "${
+      answer[0].match(regexDasBegin)[0]
     }" are neutral`;
   }
 
