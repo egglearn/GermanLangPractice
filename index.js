@@ -1,4 +1,4 @@
-import { data } from "data.js";
+import { data } from "./data.js";
 
 let dog = "food";
 let word = document.getElementById("text");
