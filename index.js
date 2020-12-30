@@ -19,7 +19,7 @@ const regexDasBegin = /^(ge)/;
 btn.addEventListener("click", function x() {
   let clicked = false;
   btn.innerText = "Next";
-  answer = data[Math.floor(Math.random() * 1957)];
+  let answer = data[Math.floor(Math.random() * 1957)];
   word.innerText = answer[0];
   hint.innerText = "";
   word.style.background = "LightBlue";
