@@ -1,31 +1,30 @@
 import { data } from "./data.js";
 
-let dog = "food";
-let word = document.getElementById("text");
-let btn = document.getElementById("button");
-let der = document.getElementById("der");
-let die = document.getElementById("die");
-let das = document.getElementById("das");
-let hint = document.getElementById("hint");
-let correct = document.getElementById("correct");
-let incorrect = document.getElementById("incorrect");
-let correctAnswers = document.getElementById("countdisplay");
-let count = 0;
-const regexDer = /(ismus|ent|er|ig|or|ich|ist|ling|)$/;
-const regexDie = /(heit|ie|ik|keit|schaft|tät|ung|ette|ine|ion|ur|e)$/;
-const regexDas = /(chen|lein|nis|ing|ment|um|tum|o|ma)$/;
-const regexDasBegin = /^(ge)/;
+const randomNounBox = document.getElementById("text");
+const startOrNextButton = document.getElementById("button");
+const derButton = document.getElementById("der");
+const dieButton = document.getElementById("die");
+const dasButton = document.getElementById("das");
+const hintBox = document.getElementById("hint");
+const correctSound = document.getElementById("correct");
+const incorrectSound = document.getElementById("incorrect");
+const correctAnswers = document.getElementById("countdisplay");
+const count = 0;
+const derEndings = /(ismus|ent|er|ig|or|ich|ist|ling|)$/;
+const dieEndings = /(heit|ie|ik|keit|schaft|tät|ung|ette|ine|ion|ur|e)$/;
+const dasEndings = /(chen|lein|nis|ing|ment|um|tum|o|ma)$/;
+const dasBeginning = /^(ge)/;
 
-btn.addEventListener("click", function x() {
+startOrNextButton.addEventListener("click", function x() {
   let clicked = false;
-  btn.innerText = "Next";
-  let answer = data[Math.floor(Math.random() * 1957)];
-  word.innerText = answer[0];
-  hint.innerText = "";
-  word.style.background = "LightBlue";
-  console.log(answer[0]);
+  startOrNextButton.innerText = "Next";
+  let randomNoun = data[Math.floor(Math.random() * 1957)];
+  randomNounBox.innerText = randomNoun[0];
+  hintBox.innerText = "";
+  randomNounBox.style.background = "LightBlue";
+  console.log(randomNoun[0]);
 
-  console.log(answer[0].match(regexDer));
+  console.log(randomNoun[0].match(derEndings));
 
   //originallz tried to check the endins of words using this method but it woudl be too repetitive
   //let lastThree = answer[0].substr(answer[0].length - 3);
@@ -34,31 +33,31 @@ btn.addEventListener("click", function x() {
   //   }
 
   //so this checks the word displayed against the regular expression. match returns an array and if it doesnt find a match the first element of the arraz will be "" so thats why it test that the first element is not ""
-  if (answer[0].match(regexDer)[0] != "") {
-    hint.innerText = `⚠️many words ending with "${
-      answer[0].match(regexDer)[0]
+  if (randomNoun[0].match(derEndings)[0] != null) {
+    hintBox.innerText = `⚠️many words ending with "${
+      randomNoun[0].match(derEndings)[0]
     }" are masculine`;
   }
   // was having problems using the same != logic that der uses with die and das, it kept saying cannot read property zero of null whenver therew was no match, so as it was giving me null, i just said whenver it is not null (ie a match) run the code then there were no erros
-  else if (answer[0].match(regexDie) != null) {
-    hint.innerText = `⚠️ many words ending with "${
-      answer[0].match(regexDie)[0]
+  else if (randomNoun[0].match(dieEndings) != null) {
+    hintBox.innerText = `⚠️ many words ending with "${
+      randomNoun[0].match(dieEndings)[0]
     }" are feminine`;
-  } else if (answer[0].match(regexDas) != null) {
-    hint.innerText = `⚠️many words ending with "${
-      answer[0].match(regexDas)[0]
+  } else if (randomNoun[0].match(dasEndings) != null) {
+    hintBox.innerText = `⚠️many words ending with "${
+      randomNoun[0].match(dasEndings)[0]
     }" are neutral`;
-  } else if (answer[0].match(regexDasBegin) != null) {
-    hint.innerText = `⚠️many words starting with "${
-      answer[0].match(regexDasBegin)[0]
+  } else if (randomNoun[0].match(dasBeginning) != null) {
+    hintBox.innerText = `⚠️many words starting with "${
+      randomNoun[0].match(dasBeginning)[0]
     }" are neutral`;
   }
 
-  der.addEventListener("click", function m() {
-    if (answer[1] == "m") {
-      word.style.background = "LightGreen";
+  derButton.addEventListener("click", function m() {
+    if (randomNoun[1] == "m") {
+      randomNounBox.style.background = "LightGreen";
 
-      correct.play();
+      correctSound.play();
 
       //  if (clicked == false) {
       //   count++;
@@ -67,15 +66,15 @@ btn.addEventListener("click", function x() {
 
       //  clicked = true;
     } else {
-      word.style.background = "Tomato";
-      incorrect.play();
+      randomNounBox.style.background = "Tomato";
+      incorrectSound.play();
     }
   });
 
-  die.addEventListener("click", function f() {
-    if (answer[1] == "f") {
-      word.style.background = "LightGreen";
-      correct.play();
+  dieButton.addEventListener("click", function f() {
+    if (randomNoun[1] == "f") {
+      randomNounBox.style.background = "LightGreen";
+      correctSound.play();
       // if (clicked == false) {
       //   count++;
       //   correctAnswers.innerText = count;
@@ -83,15 +82,15 @@ btn.addEventListener("click", function x() {
 
       // clicked = true;
     } else {
-      word.style.background = "Tomato";
-      incorrect.play();
+      randomNounBox.style.background = "Tomato";
+      incorrectSound.play();
     }
   });
 
-  das.addEventListener("click", function n() {
-    if (answer[1] == "n") {
-      word.style.background = "LightGreen";
-      correct.play();
+  dasButton.addEventListener("click", function n() {
+    if (randomNoun[1] == "n") {
+      randomNounBox.style.background = "LightGreen";
+      correctSound.play();
       // if (clicked == false) {
       //   count++;
       //   correctAnswers.innerText = count;
@@ -99,8 +98,8 @@ btn.addEventListener("click", function x() {
 
       // clicked = true;
     } else {
-      word.style.background = "Tomato";
-      incorrect.play();
+      randomNounBox.style.background = "Tomato";
+      incorrectSound.play();
     }
   });
 });
