@@ -38,10 +38,12 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
     hintBox.innerText = `⚠️many words ending with "${
       randomNoun[0].match(dasEndings)[0]
     }" are neutral`;
-  } else if (dasBeginning.test(randomNoun[0]) != null) {
+  } else if (dasBeginning.test(randomNoun[0])) {
     hintBox.innerText = `⚠️many words starting with "${
       randomNoun[0].match(dasBeginning)[0]
     }" are neutral`;
+  } else {
+    hintBox.innerText = "⚠️sometimes there are no hints, try to memorise!";
   }
 
   derButton.addEventListener("click", function checkIfMasculine() {
