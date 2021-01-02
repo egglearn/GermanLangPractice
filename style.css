@@ -3,7 +3,6 @@
   max-width: 600px;
 }
 
-
 #text {
   margin-bottom: 20px;
   padding: 50px;
@@ -41,7 +40,7 @@
   text-decoration: none;
 }
 
-.articles{
+.articles {
   max-width: 400px;
   display: inline-block;
 }
@@ -54,14 +53,12 @@
   text-decoration: none;
 }
 
-
-.articlebuttons:hover{
-display:focus;
-border: 3px black solid;
+.articlebuttons:hover {
+  display: focus;
+  border: 3px black solid;
 }
 
 #button {
-
   background: grey;
   padding: 8px;
   font-size: 30px;
@@ -70,36 +67,11 @@ border: 3px black solid;
   text-decoration: none;
 }
 
-#button:hover{
-  display:focus;
+#button:hover {
+  display: focus;
   border: solid 3px black;
 }
 
-
-#count{
+#count {
   margin-top: 40px;
-}
-
-/* @media (max-width: 430px) {
-  .main{
-    flex-direction:column;
-  }
-
-  #hint, #text{
-    margin-left:0;
-    max-width: 100%;
-    max-height:50px;
-  }
-
-  #articles{
-    max-width: 400px;
-  }
-
-  p{
-    font-size: 15px;
-  }
-} */
-
-
-
 }

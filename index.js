@@ -26,19 +26,19 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   hintBox.innerText = "";
   randomNounBox.style.background = "LightBlue";
 
-  if (randomNoun[0].match(derEndings) != null) {
+  if (derEndings.test(randomNoun[0])) {
     hintBox.innerText = `⚠️many words ending with "${
       randomNoun[0].match(derEndings)[0]
     }" are masculine`;
-  } else if (randomNoun[0].match(dieEndings) != null) {
+  } else if (dieEndings.test(randomNoun[0])) {
     hintBox.innerText = `⚠️ many words ending with "${
       randomNoun[0].match(dieEndings)[0]
     }" are feminine`;
-  } else if (randomNoun[0].match(dasEndings) != null) {
+  } else if (dasEndings.test(randomNoun[0])) {
     hintBox.innerText = `⚠️many words ending with "${
       randomNoun[0].match(dasEndings)[0]
     }" are neutral`;
-  } else if (randomNoun[0].match(dasBeginning) != null) {
+  } else if (dasBeginning.test(randomNoun[0]) != null) {
     hintBox.innerText = `⚠️many words starting with "${
       randomNoun[0].match(dasBeginning)[0]
     }" are neutral`;
@@ -47,7 +47,6 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   derButton.addEventListener("click", function checkIfMasculine() {
     if (randomNoun[1] == "m") {
       randomNounBox.style.background = "LightGreen";
-
       correctSound.play();
     } else {
       randomNounBox.style.background = "Tomato";
