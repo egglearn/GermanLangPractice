@@ -16,13 +16,16 @@ const dasBeginning = /^(ge)/;
 const correctSound = document.getElementById("correct");
 const incorrectSound = document.getElementById("incorrect");
 
+const numberOfNouns = 1957;
+
 startAndNextButton.addEventListener("click", function getRandomNoun() {
   let clicked = false;
   startAndNextButton.innerText = "Next";
-  let randomNoun = data[Math.floor(Math.random() * 1957)];
+  let randomNoun = data[Math.floor(Math.random() * numberOfNouns)];
   randomNounBox.innerText = randomNoun[0];
   hintBox.innerText = "";
   randomNounBox.style.background = "LightBlue";
+  console.log(randomNoun);
 
   if (randomNoun[0].match(derEndings)[0] != null) {
     hintBox.innerText = `⚠️many words ending with "${
