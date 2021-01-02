@@ -8,7 +8,7 @@ const derButton = document.getElementById("der");
 const dieButton = document.getElementById("die");
 const dasButton = document.getElementById("das");
 
-const derEndings = /(ismus|ent|er|ig|or|ich|ist|ling|)$/;
+const derEndings = /(ismus|ent|er|ig|or|ich|ist|ling)$/;
 const dieEndings = /(heit|ie|ik|keit|schaft|tät|ung|ette|ine|ion|ur|e)$/;
 const dasEndings = /(chen|lein|nis|ing|ment|um|tum|o|ma)$/;
 const dasBeginning = /^(ge)/;
