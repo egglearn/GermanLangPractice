@@ -26,6 +26,7 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   hintBox.innerText = "";
   randomNounBox.style.background = "LightBlue";
   console.log(randomNoun);
+  console.log(randomNoun[0].match(derEndings)[0]);
 
   if (randomNoun[0].match(derEndings)[0] != null) {
     hintBox.innerText = `⚠️many words ending with "${
