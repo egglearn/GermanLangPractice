@@ -30,7 +30,7 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   console.log(randomNoun[0].match(dieEndings)[0]);
   console.log(randomNoun[0].match(dasEndings)[0]);
 
-  if (randomNoun[0].match(derEndings)[0] != null) {
+  if (randomNoun[0].match(derEndings) != null) {
     hintBox.innerText = `⚠️many words ending with "${
       randomNoun[0].match(derEndings)[0]
     }" are masculine`;
