@@ -17,9 +17,9 @@ const correctSound = document.getElementById("correct");
 const incorrectSound = document.getElementById("incorrect");
 
 const numberOfNouns = 1957;
-let randomNoun = data[Math.floor(Math.random() * numberOfNouns)];
 
 startAndNextButton.addEventListener("click", function getRandomNoun() {
+  var randomNoun = data[Math.floor(Math.random() * numberOfNouns)];
   startAndNextButton.innerText = "Next";
   randomNounBox.innerText = randomNoun[0];
   hintBox.innerText = "";
