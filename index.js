@@ -52,6 +52,7 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   derButton.addEventListener("click", function checkIfMasculine() {
     if (randomNoun[1] == "m") {
       randomNounBox.style.background = "LightGreen";
+      console.log(randomNoun);
       correctSound.play();
     } else {
       randomNounBox.style.background = "Tomato";
