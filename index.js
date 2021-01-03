@@ -17,18 +17,15 @@ const correctSound = document.getElementById("correct");
 const incorrectSound = document.getElementById("incorrect");
 
 const numberOfNouns = 1957;
-
+var randomNoun = data[Math.floor(Math.random() * numberOfNouns)];
 startAndNextButton.addEventListener("click", function getRandomNoun() {
-  var randomNoun = data[Math.floor(Math.random() * numberOfNouns)];
+  randomNoun;
   startAndNextButton.innerText = "Next";
   randomNounBox.innerText = randomNoun[0];
   hintBox.innerText = "";
   randomNounBox.style.background = "LightBlue";
 
   if (derEndings.test(randomNoun[0])) {
-    console.log(randomNoun);
-    console.log(randomNoun[0]);
-    console.log(derEndings.test(randomNoun[0]));
     hintBox.innerText = `⚠️many words ending with "${
       randomNoun[0].match(derEndings)[0]
     }" are masculine`;
@@ -47,35 +44,35 @@ startAndNextButton.addEventListener("click", function getRandomNoun() {
   } else {
     hintBox.innerText = "⚠️sometimes there are no hints, try to memorise!";
   }
+});
 
-  derButton.addEventListener("click", function checkIfMasculine() {
-    if (randomNoun[1] == "m") {
-      randomNounBox.style.background = "LightGreen";
-      console.log(randomNoun);
-      correctSound.play();
-    } else {
-      randomNounBox.style.background = "Tomato";
-      incorrectSound.play();
-    }
-  });
+derButton.addEventListener("click", function checkIfMasculine() {
+  if (randomNoun[1] == "m") {
+    randomNounBox.style.background = "LightGreen";
+    console.log(randomNoun);
+    correctSound.play();
+  } else {
+    randomNounBox.style.background = "Tomato";
+    incorrectSound.play();
+  }
+});
 
-  dieButton.addEventListener("click", function checkIfFeminine() {
-    if (randomNoun[1] == "f") {
-      randomNounBox.style.background = "LightGreen";
-      correctSound.play();
-    } else {
-      randomNounBox.style.background = "Tomato";
-      incorrectSound.play();
-    }
-  });
+dieButton.addEventListener("click", function checkIfFeminine() {
+  if (randomNoun[1] == "f") {
+    randomNounBox.style.background = "LightGreen";
+    correctSound.play();
+  } else {
+    randomNounBox.style.background = "Tomato";
+    incorrectSound.play();
+  }
+});
 
-  dasButton.addEventListener("click", function checkIfNeutral() {
-    if (randomNoun[1] == "n") {
-      randomNounBox.style.background = "LightGreen";
-      correctSound.play();
-    } else {
-      randomNounBox.style.background = "Tomato";
-      incorrectSound.play();
-    }
-  });
+dasButton.addEventListener("click", function checkIfNeutral() {
+  if (randomNoun[1] == "n") {
+    randomNounBox.style.background = "LightGreen";
+    correctSound.play();
+  } else {
+    randomNounBox.style.background = "Tomato";
+    incorrectSound.play();
+  }
 });
